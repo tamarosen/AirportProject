@@ -4,8 +4,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirportLogicService", "AirportLogicService\AirportLogicService.csproj", "{BFE01999-82C6-4CD8-B469-8F2253C0E32D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B2F40AE3-6E5A-48FE-AA3D-47D5814F1082} = {B2F40AE3-6E5A-48FE-AA3D-47D5814F1082}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{79D678B8-543B-4C67-A1ED-DA5BC7AAC116}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirportRepositoryService", "RepositoryService\AirportRepositoryService.csproj", "{B2F40AE3-6E5A-48FE-AA3D-47D5814F1082}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTOs", "DTOs\DTOs.csproj", "{6E7A3D9B-7DA4-47BA-B807-254C926295B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirportProjectHost", "AirportProjectHost\AirportProjectHost.csproj", "{2E78B24F-E68D-4D7A-81C2-81FD6D723813}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +30,18 @@ Global
 		{79D678B8-543B-4C67-A1ED-DA5BC7AAC116}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79D678B8-543B-4C67-A1ED-DA5BC7AAC116}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79D678B8-543B-4C67-A1ED-DA5BC7AAC116}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2F40AE3-6E5A-48FE-AA3D-47D5814F1082}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2F40AE3-6E5A-48FE-AA3D-47D5814F1082}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2F40AE3-6E5A-48FE-AA3D-47D5814F1082}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2F40AE3-6E5A-48FE-AA3D-47D5814F1082}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E7A3D9B-7DA4-47BA-B807-254C926295B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E7A3D9B-7DA4-47BA-B807-254C926295B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E7A3D9B-7DA4-47BA-B807-254C926295B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E7A3D9B-7DA4-47BA-B807-254C926295B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E78B24F-E68D-4D7A-81C2-81FD6D723813}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E78B24F-E68D-4D7A-81C2-81FD6D723813}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E78B24F-E68D-4D7A-81C2-81FD6D723813}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E78B24F-E68D-4D7A-81C2-81FD6D723813}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

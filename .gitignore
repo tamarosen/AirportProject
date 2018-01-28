@@ -3,3 +3,6 @@
 ################################################################################
 
 /.vs/AirportProject/v15/Server/sqlite3
+*.mdf
+*.ldf
+/AirportLogicService/bin/Debug

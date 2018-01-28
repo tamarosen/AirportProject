@@ -16,5 +16,6 @@ namespace Models
         public int ID { get; set; }
         public State State { get; set; }
         public Station CurrentStation { get; set; }
+        public DateTime StartRouteTime { get; set; }
     }
 }

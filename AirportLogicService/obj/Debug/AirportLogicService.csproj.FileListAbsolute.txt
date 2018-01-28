@@ -1,0 +1,13 @@
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\AirportLogicService\obj\Debug\AirportLogicService.csprojResolveAssemblyReference.cache
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\AirportLogicService\obj\Debug\AirportLogicService.csproj.CoreCompileInputs.cache
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\AirportLogicService\bin\Debug\AirportLogicService.dll.config
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\AirportLogicService\bin\Debug\AirportLogicService.dll
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\AirportLogicService\bin\Debug\AirportLogicService.pdb
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\AirportLogicService\bin\Debug\Models.dll
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\AirportLogicService\bin\Debug\Models.pdb
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\AirportLogicService\obj\Debug\AirportLogicService.dll
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\AirportLogicService\obj\Debug\AirportLogicService.pdb
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\AirportLogicService\bin\Debug\DTOs.dll
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\AirportLogicService\bin\Debug\DTOs.pdb
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\AirportLogicService\bin\Debug\DTOs.dll.config
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\AirportLogicService\obj\Debug\XsdGeneratedCode\GeneratedXsdTypes.cs

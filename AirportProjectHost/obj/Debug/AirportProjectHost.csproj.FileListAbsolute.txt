@@ -1,0 +1,15 @@
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\AirportProjectHost\obj\Debug\AirportProjectHost.csprojResolveAssemblyReference.cache
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\AirportProjectHost\obj\Debug\AirportProjectHost.csproj.CoreCompileInputs.cache
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\AirportProjectHost\bin\Debug\AirportProjectHost.exe.config
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\AirportProjectHost\bin\Debug\AirportProjectHost.exe
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\AirportProjectHost\bin\Debug\AirportProjectHost.pdb
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\AirportProjectHost\bin\Debug\RepositoryService.dll
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\AirportProjectHost\bin\Debug\EntityFramework.dll
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\AirportProjectHost\bin\Debug\DTOs.dll
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\AirportProjectHost\bin\Debug\RepositoryService.pdb
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\AirportProjectHost\bin\Debug\RepositoryService.dll.config
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\AirportProjectHost\bin\Debug\EntityFramework.xml
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\AirportProjectHost\bin\Debug\DTOs.pdb
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\AirportProjectHost\bin\Debug\DTOs.dll.config
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\AirportProjectHost\obj\Debug\AirportProjectHost.exe
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\AirportProjectHost\obj\Debug\AirportProjectHost.pdb

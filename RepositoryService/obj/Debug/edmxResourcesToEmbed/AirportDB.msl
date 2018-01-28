@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AirportDBModelStoreContainer" CdmEntityContainer="AirportDBEntities">
+    <EntitySetMapping Name="FlightsHistories">
+      <EntityTypeMapping TypeName="AirportDBModel.FlightsHistory">
+        <MappingFragment StoreEntitySet="FlightsHistory">
+          <ScalarProperty Name="FlightID" ColumnName="FlightID" />
+          <ScalarProperty Name="StationID" ColumnName="StationID" />
+          <ScalarProperty Name="EnterTime" ColumnName="EnterTime" />
+          <ScalarProperty Name="ExitTime" ColumnName="ExitTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Scedules">
+      <EntityTypeMapping TypeName="AirportDBModel.Scedule">
+        <MappingFragment StoreEntitySet="Scedule">
+          <ScalarProperty Name="FlightID" ColumnName="FlightID" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="StartRouteTime" ColumnName="StartRouteTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StationStates">
+      <EntityTypeMapping TypeName="AirportDBModel.StationState">
+        <MappingFragment StoreEntitySet="StationState">
+          <ScalarProperty Name="StationID" ColumnName="StationID" />
+          <ScalarProperty Name="FlightID" ColumnName="FlightID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

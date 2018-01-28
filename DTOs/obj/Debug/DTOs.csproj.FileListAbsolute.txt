@@ -1,0 +1,6 @@
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\DTOs\bin\Debug\DTOs.dll.config
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\DTOs\bin\Debug\DTOs.dll
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\DTOs\bin\Debug\DTOs.pdb
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\DTOs\obj\Debug\DTOs.csproj.CoreCompileInputs.cache
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\DTOs\obj\Debug\DTOs.dll
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\DTOs\obj\Debug\DTOs.pdb

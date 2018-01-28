@@ -1,0 +1,14 @@
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\RepositoryService\bin\Debug\RepositoryService.dll.config
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\RepositoryService\bin\Debug\RepositoryService.dll
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\RepositoryService\bin\Debug\RepositoryService.pdb
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\RepositoryService\bin\Debug\DTOs.dll
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\RepositoryService\bin\Debug\EntityFramework.dll
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\RepositoryService\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\RepositoryService\bin\Debug\DTOs.pdb
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\RepositoryService\bin\Debug\DTOs.dll.config
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\RepositoryService\bin\Debug\EntityFramework.xml
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\RepositoryService\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\RepositoryService\obj\Debug\AirportRepositoryService.csprojResolveAssemblyReference.cache
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\RepositoryService\obj\Debug\AirportRepositoryService.csproj.CoreCompileInputs.cache
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\RepositoryService\obj\Debug\RepositoryService.dll
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\RepositoryService\obj\Debug\RepositoryService.pdb

@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
 using System.Text;
+using AirportLogicService.RepoServiceReference;
 using System.Threading.Tasks;
+using AirportLogicService.ContractTypes;
 
 namespace AirportLogicService
 {
@@ -12,10 +14,6 @@ namespace AirportLogicService
     public interface IAirportManager
     {
         [OperationContract]
-        void StartLanding(Flight flight);
-        [OperationContract]
-        void StartTakingOff(Flight flight);
-        [OperationContract]
-        void MoveToNextStation(Flight flight);
+        bool SceduleNewFlight(DTOs.FlightDTO flightDTO);
     }
 }
