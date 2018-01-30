@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="AirportDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityType Name="FlightsHistory">
+  <EntityType Name="FlightHistory">
     <Key>
       <PropertyRef Name="FlightID" />
     </Key>
@@ -9,11 +9,11 @@
     <Property Name="EnterTime" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="ExitTime" Type="DateTime" Nullable="false" Precision="3" />
   </EntityType>
-  <EntityType Name="Scedule">
+  <EntityType Name="Schedule">
     <Key>
       <PropertyRef Name="FlightID" />
     </Key>
-    <Property Name="FlightID" Type="Int32" Nullable="false" />
+    <Property Name="FlightID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="State" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
     <Property Name="StartRouteTime" Type="DateTime" Nullable="false" Precision="3" />
   </EntityType>
@@ -24,9 +24,9 @@
     <Property Name="StationID" Type="Int32" Nullable="false" />
     <Property Name="FlightID" Type="Int32" Nullable="false" />
   </EntityType>
-  <EntityContainer Name="AirportDBEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="FlightsHistories" EntityType="Self.FlightsHistory" />
-    <EntitySet Name="Scedules" EntityType="Self.Scedule" />
+  <EntityContainer Name="AirportDBEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="FlightHistories" EntityType="Self.FlightHistory" />
+    <EntitySet Name="Schedules" EntityType="Self.Schedule" />
     <EntitySet Name="StationStates" EntityType="Self.StationState" />
   </EntityContainer>
 </Schema>

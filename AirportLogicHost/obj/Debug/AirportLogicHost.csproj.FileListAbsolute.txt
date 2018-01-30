@@ -1,0 +1,15 @@
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\AirportLogicHost\bin\Debug\AirportLogicHost.exe.config
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\AirportLogicHost\bin\Debug\AirportLogicHost.exe
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\AirportLogicHost\bin\Debug\AirportLogicHost.pdb
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\AirportLogicHost\bin\Debug\AirportLogicService.dll
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\AirportLogicHost\bin\Debug\Models.dll
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\AirportLogicHost\bin\Debug\DTOs.dll
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\AirportLogicHost\bin\Debug\AirportLogicService.pdb
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\AirportLogicHost\bin\Debug\AirportLogicService.dll.config
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\AirportLogicHost\bin\Debug\Models.pdb
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\AirportLogicHost\bin\Debug\DTOs.pdb
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\AirportLogicHost\bin\Debug\DTOs.dll.config
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\AirportLogicHost\obj\Debug\AirportLogicHost.csprojResolveAssemblyReference.cache
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\AirportLogicHost\obj\Debug\AirportLogicHost.csproj.CoreCompileInputs.cache
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\AirportLogicHost\obj\Debug\AirportLogicHost.exe
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\AirportLogicHost\obj\Debug\AirportLogicHost.pdb

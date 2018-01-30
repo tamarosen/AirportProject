@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="2b354cbd-26f3-4acd-bf10-38ec5c6d8738" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8733/AirportLogicService/AirportManagerService/" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="6d22b305-ad00-4a6a-b5e6-43edae5b5018" SourceId="1" SourceUrl="http://localhost:8733/AirportLogicService/AirportManagerService/?xsd=xsd1" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="3c58f653-7e2f-4901-8a97-436e71da4639" SourceId="1" SourceUrl="http://localhost:8733/AirportLogicService/AirportManagerService/?xsd=xsd2" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="4c62026f-a4a2-409a-a284-2b6e4cc431c5" SourceId="1" SourceUrl="http://localhost:8733/AirportLogicService/AirportManagerService/?xsd=xsd0" />
+    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="b18ee129-3034-40d0-8512-c263a631bb68" SourceId="1" SourceUrl="http://localhost:8733/AirportLogicService/AirportManagerService/?disco" />
+    <MetadataFile FileName="AirportManagerService.wsdl" MetadataType="Wsdl" ID="82455745-ee7a-4519-a0b5-a335809855fc" SourceId="1" SourceUrl="http://localhost:8733/AirportLogicService/AirportManagerService/?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

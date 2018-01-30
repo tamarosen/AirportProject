@@ -155,15 +155,21 @@ namespace AirportLogicService
             }
         }
         
-        public bool SceduleNewFlight(DTOs.FlightDTO flightDTO)
+        public bool ScheduleNewFlight(DTOs.FlightDTO flightDTO)
         {
-            flights.Add(flightDTO);
-            if (flightDTO.StartRouteTime < flights.First().StartRouteTime)
+            //add new flight to the db schedule table and get it back with unique id
+            DTOs.FlightDTO newFlight = repo.AddFlightToSchedule(flightDTO);
+
+            if (newFlight == null) return false;
+
+            if (!flights.Add(newFlight)) return false;
+
+            if (newFlight.StartRouteTime < flights.First().StartRouteTime)
             {
                 TimeSpan timeUntilNextFlight = GetNextTimeSpan();
                 scheduleTimer.Change(new TimeSpan(0), timeUntilNextFlight);
             }
-            return repo.AddFlightToScedule(flightDTO);
+            return true;
         }
     }
 }

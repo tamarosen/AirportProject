@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AirportRepositoryService
+namespace RepositoryService
 {
     using System;
     using System.Collections.Generic;

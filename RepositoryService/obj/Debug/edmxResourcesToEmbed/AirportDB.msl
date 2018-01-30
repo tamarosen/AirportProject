@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="AirportDBModelStoreContainer" CdmEntityContainer="AirportDBEntities">
-    <EntitySetMapping Name="FlightsHistories">
-      <EntityTypeMapping TypeName="AirportDBModel.FlightsHistory">
-        <MappingFragment StoreEntitySet="FlightsHistory">
+  <EntityContainerMapping StorageEntityContainer="AirportDBModelStoreContainer" CdmEntityContainer="AirportDBEntities1">
+    <EntitySetMapping Name="FlightHistories">
+      <EntityTypeMapping TypeName="AirportDBModel.FlightHistory">
+        <MappingFragment StoreEntitySet="FlightHistory">
           <ScalarProperty Name="FlightID" ColumnName="FlightID" />
           <ScalarProperty Name="StationID" ColumnName="StationID" />
           <ScalarProperty Name="EnterTime" ColumnName="EnterTime" />
@@ -11,9 +11,9 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Scedules">
-      <EntityTypeMapping TypeName="AirportDBModel.Scedule">
-        <MappingFragment StoreEntitySet="Scedule">
+    <EntitySetMapping Name="Schedules">
+      <EntityTypeMapping TypeName="AirportDBModel.Schedule">
+        <MappingFragment StoreEntitySet="Schedule">
           <ScalarProperty Name="FlightID" ColumnName="FlightID" />
           <ScalarProperty Name="State" ColumnName="State" />
           <ScalarProperty Name="StartRouteTime" ColumnName="StartRouteTime" />

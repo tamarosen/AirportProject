@@ -21,11 +21,11 @@ namespace AirportLogicService.RepoServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRepository/GetFutureFlights", ReplyAction="http://tempuri.org/IRepository/GetFutureFlightsResponse")]
         System.Threading.Tasks.Task<DTOs.FlightDTO[]> GetFutureFlightsAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRepository/AddFlightToScedule", ReplyAction="http://tempuri.org/IRepository/AddFlightToSceduleResponse")]
-        bool AddFlightToScedule(DTOs.FlightDTO flight);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRepository/AddFlightToSchedule", ReplyAction="http://tempuri.org/IRepository/AddFlightToScheduleResponse")]
+        DTOs.FlightDTO AddFlightToSchedule(DTOs.FlightDTO flight);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRepository/AddFlightToScedule", ReplyAction="http://tempuri.org/IRepository/AddFlightToSceduleResponse")]
-        System.Threading.Tasks.Task<bool> AddFlightToSceduleAsync(DTOs.FlightDTO flight);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRepository/AddFlightToSchedule", ReplyAction="http://tempuri.org/IRepository/AddFlightToScheduleResponse")]
+        System.Threading.Tasks.Task<DTOs.FlightDTO> AddFlightToSceduleAsync(DTOs.FlightDTO flight);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -63,11 +63,11 @@ namespace AirportLogicService.RepoServiceReference {
             return base.Channel.GetFutureFlightsAsync();
         }
         
-        public bool AddFlightToScedule(DTOs.FlightDTO flight) {
-            return base.Channel.AddFlightToScedule(flight);
+        public DTOs.FlightDTO AddFlightToSchedule(DTOs.FlightDTO flight) {
+            return base.Channel.AddFlightToSchedule(flight);
         }
         
-        public System.Threading.Tasks.Task<bool> AddFlightToSceduleAsync(DTOs.FlightDTO flight) {
+        public System.Threading.Tasks.Task<DTOs.FlightDTO> AddFlightToSceduleAsync(DTOs.FlightDTO flight) {
             return base.Channel.AddFlightToSceduleAsync(flight);
         }
     }

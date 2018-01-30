@@ -14,6 +14,6 @@ namespace AirportLogicService
     public interface IAirportManager
     {
         [OperationContract]
-        bool SceduleNewFlight(DTOs.FlightDTO flightDTO);
+        bool ScheduleNewFlight(DTOs.FlightDTO flightDTO);
     }
 }

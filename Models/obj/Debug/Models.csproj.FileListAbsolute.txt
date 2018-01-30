@@ -3,3 +3,4 @@ C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\Models\bin\Debug\Models.
 C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\Models\obj\Debug\Models.csproj.CoreCompileInputs.cache
 C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\Models\obj\Debug\Models.dll
 C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\Models\obj\Debug\Models.pdb
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\Models\obj\Debug\Models.csprojResolveAssemblyReference.cache

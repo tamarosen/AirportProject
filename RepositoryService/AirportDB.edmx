@@ -5,7 +5,7 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="AirportDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="FlightsHistory">
+        <EntityType Name="FlightHistory">
           <Key>
             <PropertyRef Name="FlightID" />
           </Key>
@@ -14,11 +14,11 @@
           <Property Name="EnterTime" Type="datetime" Nullable="false" />
           <Property Name="ExitTime" Type="datetime" Nullable="false" />
         </EntityType>
-        <EntityType Name="Scedule">
+        <EntityType Name="Schedule">
           <Key>
             <PropertyRef Name="FlightID" />
           </Key>
-          <Property Name="FlightID" Type="int" Nullable="false" />
+          <Property Name="FlightID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="State" Type="varchar" MaxLength="1" />
           <Property Name="StartRouteTime" Type="datetime" Nullable="false" />
         </EntityType>
@@ -30,8 +30,8 @@
           <Property Name="FlightID" Type="int" Nullable="false" />
         </EntityType>
         <EntityContainer Name="AirportDBModelStoreContainer">
-          <EntitySet Name="FlightsHistory" EntityType="Self.FlightsHistory" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Scedule" EntityType="Self.Scedule" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FlightHistory" EntityType="Self.FlightHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Schedule" EntityType="Self.Schedule" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="StationState" EntityType="Self.StationState" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema>
@@ -39,7 +39,7 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="AirportDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="FlightsHistory">
+        <EntityType Name="FlightHistory">
           <Key>
             <PropertyRef Name="FlightID" />
           </Key>
@@ -48,11 +48,11 @@
           <Property Name="EnterTime" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ExitTime" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
-        <EntityType Name="Scedule">
+        <EntityType Name="Schedule">
           <Key>
             <PropertyRef Name="FlightID" />
           </Key>
-          <Property Name="FlightID" Type="Int32" Nullable="false" />
+          <Property Name="FlightID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="State" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
           <Property Name="StartRouteTime" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
@@ -63,9 +63,9 @@
           <Property Name="StationID" Type="Int32" Nullable="false" />
           <Property Name="FlightID" Type="Int32" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="AirportDBEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="FlightsHistories" EntityType="Self.FlightsHistory" />
-          <EntitySet Name="Scedules" EntityType="Self.Scedule" />
+        <EntityContainer Name="AirportDBEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="FlightHistories" EntityType="Self.FlightHistory" />
+          <EntitySet Name="Schedules" EntityType="Self.Schedule" />
           <EntitySet Name="StationStates" EntityType="Self.StationState" />
         </EntityContainer>
       </Schema>
@@ -73,10 +73,10 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="AirportDBModelStoreContainer" CdmEntityContainer="AirportDBEntities">
-          <EntitySetMapping Name="FlightsHistories">
-            <EntityTypeMapping TypeName="AirportDBModel.FlightsHistory">
-              <MappingFragment StoreEntitySet="FlightsHistory">
+        <EntityContainerMapping StorageEntityContainer="AirportDBModelStoreContainer" CdmEntityContainer="AirportDBEntities1">
+          <EntitySetMapping Name="FlightHistories">
+            <EntityTypeMapping TypeName="AirportDBModel.FlightHistory">
+              <MappingFragment StoreEntitySet="FlightHistory">
                 <ScalarProperty Name="FlightID" ColumnName="FlightID" />
                 <ScalarProperty Name="StationID" ColumnName="StationID" />
                 <ScalarProperty Name="EnterTime" ColumnName="EnterTime" />
@@ -84,9 +84,9 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Scedules">
-            <EntityTypeMapping TypeName="AirportDBModel.Scedule">
-              <MappingFragment StoreEntitySet="Scedule">
+          <EntitySetMapping Name="Schedules">
+            <EntityTypeMapping TypeName="AirportDBModel.Schedule">
+              <MappingFragment StoreEntitySet="Schedule">
                 <ScalarProperty Name="FlightID" ColumnName="FlightID" />
                 <ScalarProperty Name="State" ColumnName="State" />
                 <ScalarProperty Name="StartRouteTime" ColumnName="StartRouteTime" />

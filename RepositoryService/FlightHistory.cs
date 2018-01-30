@@ -7,15 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AirportRepositoryService
+namespace RepositoryService
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Scedule
+    public partial class FlightHistory
     {
         public int FlightID { get; set; }
-        public string State { get; set; }
-        public System.DateTime StartRouteTime { get; set; }
+        public int StationID { get; set; }
+        public System.DateTime EnterTime { get; set; }
+        public System.DateTime ExitTime { get; set; }
     }
 }

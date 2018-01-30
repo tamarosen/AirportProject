@@ -14,7 +14,11 @@ namespace AirportRepositoryService
         [OperationContract]
         List<FlightDTO> GetFutureFlights();
         [OperationContract]
-        bool AddFlightToScedule(FlightDTO flight);
-
+        FlightDTO AddFlightToSchedule(FlightDTO flight);
+        [OperationContract]
+        void AddFlightInfoToHistory(FlightInfoDTO flightInfo);
+        [OperationContract]
+        void UpdateStationState(StationDTO stationDTO);
+        
     }
 }

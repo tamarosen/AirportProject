@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="AirportDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityType Name="FlightsHistory">
+  <EntityType Name="FlightHistory">
     <Key>
       <PropertyRef Name="FlightID" />
     </Key>
@@ -9,11 +9,11 @@
     <Property Name="EnterTime" Type="datetime" Nullable="false" />
     <Property Name="ExitTime" Type="datetime" Nullable="false" />
   </EntityType>
-  <EntityType Name="Scedule">
+  <EntityType Name="Schedule">
     <Key>
       <PropertyRef Name="FlightID" />
     </Key>
-    <Property Name="FlightID" Type="int" Nullable="false" />
+    <Property Name="FlightID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="State" Type="varchar" MaxLength="1" />
     <Property Name="StartRouteTime" Type="datetime" Nullable="false" />
   </EntityType>
@@ -25,8 +25,8 @@
     <Property Name="FlightID" Type="int" Nullable="false" />
   </EntityType>
   <EntityContainer Name="AirportDBModelStoreContainer">
-    <EntitySet Name="FlightsHistory" EntityType="Self.FlightsHistory" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Scedule" EntityType="Self.Scedule" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FlightHistory" EntityType="Self.FlightHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Schedule" EntityType="Self.Schedule" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="StationState" EntityType="Self.StationState" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>

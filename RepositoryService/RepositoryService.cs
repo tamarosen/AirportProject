@@ -4,38 +4,54 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DTOs;
+using RepositoryService;
 
 namespace AirportRepositoryService
 {
     public class RepositoryService : IRepository
     {
-        AirportDBEntities db;
+        AirportDBEntities1 db;
         public RepositoryService()
         {
-            db = new AirportDBEntities();
+            db = new AirportDBEntities1();
         }
-        public bool AddFlightToScedule(FlightDTO flight)
+
+        public void AddFlightInfoToHistory(FlightInfoDTO flightInfo)
+        {
+            db.FlightHistories.Add(new FlightHistory()
+            {
+                FlightID = flightInfo.FlightID,
+                StationID = flightInfo.StationID,
+                EnterTime = flightInfo.EnterTime,
+                ExitTime = flightInfo.ExitTime
+            });
+        }
+
+        public FlightDTO AddFlightToSchedule(FlightDTO flight)
         {
             try
             {
-                db.Scedules.Add(new Scedule()
+                //int maxId = Convert.ToInt32(db.Database.SqlQuery<decimal>("Select IDENT_CURRENT ('Schedule')", new object[0]).FirstOrDefault());
+                
+                Schedule schedule = db.Schedules.Add(new Schedule()
                 {
-                    FlightID = flight.ID,
                     StartRouteTime = flight.StartRouteTime,
                     State = (flight.State).ToString()
                 });
-                return true;
+                flight.ID = schedule.FlightID;
+                return flight;
             }
             catch (Exception)
             {
-                return false;
+                return null;
             }
         }
 
         public List<FlightDTO> GetFutureFlights()
         {
             List<FlightDTO> list = new List<FlightDTO>();
-            foreach (var flight in db.Scedules)
+            
+            foreach (var flight in db.Schedules)
             {
                 FlightDTO flightDTO = new FlightDTO()
                 {
@@ -46,7 +62,13 @@ namespace AirportRepositoryService
                 if (flight.StartRouteTime > DateTime.Now)
                     list.Add(flightDTO);
             }
+
             return list;
+        }
+
+        public void UpdateStationState(StationDTO stationDTO)
+        {
+            db.StationStates.Where(s => s.StationID == stationDTO.StationID).FirstOrDefault().FlightID = stationDTO.FlightID;                        
         }
     }
 }

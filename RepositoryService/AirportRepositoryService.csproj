@@ -67,13 +67,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AirportDB.edmx</DependentUpon>
     </Compile>
-    <Compile Include="FlightsHistory.cs">
+    <Compile Include="FlightHistory.cs">
       <DependentUpon>AirportDB.tt</DependentUpon>
     </Compile>
     <Compile Include="IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepositoryService.cs" />
-    <Compile Include="Scedule.cs">
+    <Compile Include="Schedule.cs">
       <DependentUpon>AirportDB.tt</DependentUpon>
     </Compile>
     <Compile Include="StationState.cs">
@@ -92,6 +92,18 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DTOs\DTOs.csproj">
+      <Project>{6E7A3D9B-7DA4-47BA-B807-254C926295B2}</Project>
+      <Name>DTOs</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="AirportDB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>AirportDB.edmx</DependentUpon>
@@ -102,15 +114,6 @@
       <DependentUpon>AirportDB.edmx</DependentUpon>
       <LastGenOutput>AirportDB.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DTOs\DTOs.csproj">
-      <Project>{6E7A3D9B-7DA4-47BA-B807-254C926295B2}</Project>
-      <Name>DTOs</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

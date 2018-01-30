@@ -15,6 +15,10 @@ namespace DTOs
     [DataContract]
     public class FlightDTO
     {
+        public FlightDTO()
+        {
+            ID = 0;
+        }
         [DataMember]
         public int ID { get; set; }
         [DataMember]

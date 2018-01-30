@@ -11,6 +11,8 @@ namespace DTOs
     public class StationDTO
     {
         [DataMember]
-        public int ID { get; set; }
+        public int StationID { get; set; }
+        [DataMember]
+        public int FlightID { get; set; }
     }
 }

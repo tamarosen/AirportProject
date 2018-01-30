@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AirportRepositoryService
+namespace RepositoryService
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class AirportDBEntities : DbContext
+    public partial class AirportDBEntities1 : DbContext
     {
-        public AirportDBEntities()
-            : base("name=AirportDBEntities")
+        public AirportDBEntities1()
+            : base("name=AirportDBEntities1")
         {
         }
     
@@ -25,8 +25,8 @@ namespace AirportRepositoryService
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<FlightsHistory> FlightsHistories { get; set; }
-        public virtual DbSet<Scedule> Scedules { get; set; }
+        public virtual DbSet<FlightHistory> FlightHistories { get; set; }
+        public virtual DbSet<Schedule> Schedules { get; set; }
         public virtual DbSet<StationState> StationStates { get; set; }
     }
 }
