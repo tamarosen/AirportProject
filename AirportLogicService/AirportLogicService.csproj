@@ -45,7 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AirportManagerService.cs" />
-    <Compile Include="Connected Services\RepoServiceReference\Reference.cs">
+    <Compile Include="Connected Services\RepositoryServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -56,16 +56,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Connected Services\RepoServiceReference\item.xsd">
+    <None Include="Connected Services\RepositoryServiceReference\item.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\RepoServiceReference\item1.xsd">
+    <None Include="Connected Services\RepositoryServiceReference\item1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\RepoServiceReference\item2.xsd">
+    <None Include="Connected Services\RepositoryServiceReference\item2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\RepoServiceReference\RepositoryService.wsdl" />
+    <None Include="Connected Services\RepositoryServiceReference\RepositoryService.wsdl" />
     <None Include="Properties\DataSources\DTOs.FlightDTO.datasource" />
   </ItemGroup>
   <ItemGroup>
@@ -82,19 +82,19 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\RepoServiceReference\" />
+    <WCFMetadataStorage Include="Connected Services\RepositoryServiceReference\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\RepoServiceReference\item.disco" />
+    <None Include="Connected Services\RepositoryServiceReference\item.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\RepoServiceReference\configuration91.svcinfo" />
+    <None Include="Connected Services\RepositoryServiceReference\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\RepoServiceReference\configuration.svcinfo" />
+    <None Include="Connected Services\RepositoryServiceReference\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\RepoServiceReference\Reference.svcmap">
+    <None Include="Connected Services\RepositoryServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

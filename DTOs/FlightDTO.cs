@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
@@ -13,7 +14,7 @@ namespace DTOs
         TakingOff
     }
     [DataContract]
-    public class FlightDTO
+    public class FlightDTO : INotifyPropertyChanged
     {
         public FlightDTO()
         {
@@ -25,5 +26,7 @@ namespace DTOs
         public State State { get; set; }
         [DataMember]
         public DateTime StartRouteTime { get; set; }
+
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

@@ -53,7 +53,7 @@
             <PropertyRef Name="FlightID" />
           </Key>
           <Property Name="FlightID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="State" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="State" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="StartRouteTime" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
         <EntityType Name="StationState">

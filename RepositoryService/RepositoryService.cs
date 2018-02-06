@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,17 +32,21 @@ namespace AirportRepositoryService
         {
             try
             {
-                //int maxId = Convert.ToInt32(db.Database.SqlQuery<decimal>("Select IDENT_CURRENT ('Schedule')", new object[0]).FirstOrDefault());
-                
+                // int maxId = Convert.ToInt32(db.Database.SqlQuery<decimal>("Select IDENT_CURRENT ('Schedule')", new object[0]).FirstOrDefault());
+
                 Schedule schedule = db.Schedules.Add(new Schedule()
                 {
+                    // FlightID = maxId + 1,
                     StartRouteTime = flight.StartRouteTime,
                     State = (flight.State).ToString()
                 });
+
+                db.SaveChanges();
+
                 flight.ID = schedule.FlightID;
                 return flight;
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 return null;
             }
@@ -50,8 +55,10 @@ namespace AirportRepositoryService
         public List<FlightDTO> GetFutureFlights()
         {
             List<FlightDTO> list = new List<FlightDTO>();
+
+            DbSet<Schedule> schedules = db.Schedules;
             
-            foreach (var flight in db.Schedules)
+            foreach (var flight in schedules)
             {
                 FlightDTO flightDTO = new FlightDTO()
                 {

@@ -101,15 +101,98 @@ namespace AirportSimulator.LogicServiceReference {
         TakingOff = 1,
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="StationDTO", Namespace="http://schemas.datacontract.org/2004/07/DTOs")]
+    [System.SerializableAttribute()]
+    public partial class StationDTO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int FlightIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int StationIDField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int FlightID {
+            get {
+                return this.FlightIDField;
+            }
+            set {
+                if ((this.FlightIDField.Equals(value) != true)) {
+                    this.FlightIDField = value;
+                    this.RaisePropertyChanged("FlightID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int StationID {
+            get {
+                return this.StationIDField;
+            }
+            set {
+                if ((this.StationIDField.Equals(value) != true)) {
+                    this.StationIDField = value;
+                    this.RaisePropertyChanged("StationID");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="LogicServiceReference.IAirportManager")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="LogicServiceReference.IAirportManager", CallbackContract=typeof(AirportSimulator.LogicServiceReference.IAirportManagerCallback), SessionMode=System.ServiceModel.SessionMode.Required)]
     public interface IAirportManager {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAirportManager/SceduleNewFlight", ReplyAction="http://tempuri.org/IAirportManager/SceduleNewFlightResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAirportManager/ScheduleNewFlight", ReplyAction="http://tempuri.org/IAirportManager/ScheduleNewFlightResponse")]
         bool ScheduleNewFlight(AirportSimulator.LogicServiceReference.FlightDTO flightDTO);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAirportManager/SceduleNewFlight", ReplyAction="http://tempuri.org/IAirportManager/SceduleNewFlightResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAirportManager/ScheduleNewFlight", ReplyAction="http://tempuri.org/IAirportManager/ScheduleNewFlightResponse")]
         System.Threading.Tasks.Task<bool> ScheduleNewFlightAsync(AirportSimulator.LogicServiceReference.FlightDTO flightDTO);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAirportManager/GetFutureFlights", ReplyAction="http://tempuri.org/IAirportManager/GetFutureFlightsResponse")]
+        AirportSimulator.LogicServiceReference.FlightDTO[] GetFutureFlights();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAirportManager/GetFutureFlights", ReplyAction="http://tempuri.org/IAirportManager/GetFutureFlightsResponse")]
+        System.Threading.Tasks.Task<AirportSimulator.LogicServiceReference.FlightDTO[]> GetFutureFlightsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAirportManager/GetStationsState", ReplyAction="http://tempuri.org/IAirportManager/GetStationsStateResponse")]
+        AirportSimulator.LogicServiceReference.StationDTO[] GetStationsState();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAirportManager/GetStationsState", ReplyAction="http://tempuri.org/IAirportManager/GetStationsStateResponse")]
+        System.Threading.Tasks.Task<AirportSimulator.LogicServiceReference.StationDTO[]> GetStationsStateAsync();
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IAirportManagerCallback {
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAirportManager/FlightUpdate")]
+        void FlightUpdate();
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAirportManager/StationStateUpdate")]
+        void StationStateUpdate();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -118,25 +201,26 @@ namespace AirportSimulator.LogicServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class AirportManagerClient : System.ServiceModel.ClientBase<AirportSimulator.LogicServiceReference.IAirportManager>, AirportSimulator.LogicServiceReference.IAirportManager {
+    public partial class AirportManagerClient : System.ServiceModel.DuplexClientBase<AirportSimulator.LogicServiceReference.IAirportManager>, AirportSimulator.LogicServiceReference.IAirportManager {
         
-        public AirportManagerClient() {
+        public AirportManagerClient(System.ServiceModel.InstanceContext callbackInstance) : 
+                base(callbackInstance) {
         }
         
-        public AirportManagerClient(string endpointConfigurationName) : 
-                base(endpointConfigurationName) {
+        public AirportManagerClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName) : 
+                base(callbackInstance, endpointConfigurationName) {
         }
         
-        public AirportManagerClient(string endpointConfigurationName, string remoteAddress) : 
-                base(endpointConfigurationName, remoteAddress) {
+        public AirportManagerClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, string remoteAddress) : 
+                base(callbackInstance, endpointConfigurationName, remoteAddress) {
         }
         
-        public AirportManagerClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(endpointConfigurationName, remoteAddress) {
+        public AirportManagerClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(callbackInstance, endpointConfigurationName, remoteAddress) {
         }
         
-        public AirportManagerClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(binding, remoteAddress) {
+        public AirportManagerClient(System.ServiceModel.InstanceContext callbackInstance, System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(callbackInstance, binding, remoteAddress) {
         }
         
         public bool ScheduleNewFlight(AirportSimulator.LogicServiceReference.FlightDTO flightDTO) {
@@ -145,6 +229,22 @@ namespace AirportSimulator.LogicServiceReference {
         
         public System.Threading.Tasks.Task<bool> ScheduleNewFlightAsync(AirportSimulator.LogicServiceReference.FlightDTO flightDTO) {
             return base.Channel.ScheduleNewFlightAsync(flightDTO);
+        }
+        
+        public AirportSimulator.LogicServiceReference.FlightDTO[] GetFutureFlights() {
+            return base.Channel.GetFutureFlights();
+        }
+        
+        public System.Threading.Tasks.Task<AirportSimulator.LogicServiceReference.FlightDTO[]> GetFutureFlightsAsync() {
+            return base.Channel.GetFutureFlightsAsync();
+        }
+        
+        public AirportSimulator.LogicServiceReference.StationDTO[] GetStationsState() {
+            return base.Channel.GetStationsState();
+        }
+        
+        public System.Threading.Tasks.Task<AirportSimulator.LogicServiceReference.StationDTO[]> GetStationsStateAsync() {
+            return base.Channel.GetStationsStateAsync();
         }
     }
 }

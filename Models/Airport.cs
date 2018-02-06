@@ -9,15 +9,27 @@ namespace Models
 {
     public class Airport
     {
+        static public Airport self;
+
         public Dictionary<int, Station> AllStations;
         public List<Station> FirstLandingStations { get; private set; }
         public List<Station> FirstFlyingStations { get; private set; }
         public List<Station> LastLandingStations { get; private set; }
         public List<Station> LastFlyingStations { get; private set; }
 
-        public Airport()
+        // should be a singlton:
+        private Airport()
         {
             CreateStations();
+        }
+
+        static public Airport Instance()
+        {
+            if (self == null)
+            {
+                self = new Airport();
+            }
+            return self;
         }
 
         private void CreateStations()
@@ -41,6 +53,7 @@ namespace Models
             station4.NextLandingStations = new List<Station>() { station5 };
             station5.NextLandingStations = new List<Station>() { station6, station7 };
 
+            AllStations = new Dictionary<int, Station>();
             AllStations.Add(station1.ID, station1);
             AllStations.Add(station2.ID, station2);
             AllStations.Add(station3.ID, station3);

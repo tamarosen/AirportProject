@@ -4,3 +4,4 @@ C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\AirportSimulator\bin\Deb
 C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\AirportSimulator\obj\Debug\AirportSimulator.csproj.CoreCompileInputs.cache
 C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\AirportSimulator\obj\Debug\AirportSimulator.exe
 C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\AirportSimulator\obj\Debug\AirportSimulator.pdb
+C:\Users\roni\Desktop\Tamar\FinalProject\AirportProject\AirportSimulator\obj\Debug\AirportSimulator.csprojResolveAssemblyReference.cache

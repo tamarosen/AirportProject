@@ -54,14 +54,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Connected Services\LogicServiceReference\AirportManagerService.wsdl" />
-    <None Include="Connected Services\LogicServiceReference\item.xsd">
+    <None Include="Connected Services\LogicServiceReference\AirportSimulator.LogicServiceReference.FlightDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\LogicServiceReference\AirportSimulator.LogicServiceReference.StationDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\LogicServiceReference\DTOs.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\LogicServiceReference\item1.xsd">
+    <None Include="Connected Services\LogicServiceReference\service.wsdl" />
+    <None Include="Connected Services\LogicServiceReference\service.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\LogicServiceReference\item2.xsd">
+    <None Include="Connected Services\LogicServiceReference\service1.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
@@ -70,9 +76,6 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\LogicServiceReference\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\LogicServiceReference\item.disco" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\LogicServiceReference\configuration91.svcinfo" />

@@ -16,9 +16,11 @@ namespace AirportSimulator
         {
             rnd = new Random();
 
-            managerClient = new AirportManagerClient();
+            managerClient = new AirportManagerClient(new System.ServiceModel.InstanceContext(new Callback()));
 
-            Timer timer = new Timer(CreateNewFlight, null, 0, 10000);
+            Timer timer = new Timer(CreateNewFlight, null, 0, 3000);
+
+            Console.ReadLine();
             
         }
 
@@ -27,10 +29,17 @@ namespace AirportSimulator
             FlightDTO newFlight = new FlightDTO()
             {
                 State = (State)Enum.GetValues(typeof(State)).GetValue(rnd.Next(0,1)),
-                StartRouteTime = DateTime.Now.AddMilliseconds(rnd.Next(5000, 10000))
+                StartRouteTime = DateTime.Now.AddMilliseconds(rnd.Next(5000, 10000) + 3600000)
             };
 
             managerClient.ScheduleNewFlight(newFlight);
+        }
+
+        public class Callback : IAirportManagerCallback
+        {
+            public void FlightUpdate() { }
+            
+            public void StationStateUpdate(){}
         }
     }
 }

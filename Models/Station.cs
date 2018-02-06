@@ -55,6 +55,11 @@ namespace Models
             return FlightsQueue.Count();
         }
         
+        public int GetFlightInStation()
+        {
+            if (FlightsQueue.Count == 0) return -1;
+            return FlightsQueue.Peek().ID;
+        }
 
         public override bool Equals(object obj)
         {

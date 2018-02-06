@@ -20,6 +20,214 @@ namespace AirportLogicService.ContractTypes
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/DTOs")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schemas.datacontract.org/2004/07/DTOs", IsNullable=true)]
+    public partial class StationDTO
+    {
+        
+        private int flightIDField;
+        
+        private bool flightIDFieldSpecified;
+        
+        private int stationIDField;
+        
+        private bool stationIDFieldSpecified;
+        
+        /// <remarks/>
+        public int FlightID
+        {
+            get
+            {
+                return this.flightIDField;
+            }
+            set
+            {
+                this.flightIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool FlightIDSpecified
+        {
+            get
+            {
+                return this.flightIDFieldSpecified;
+            }
+            set
+            {
+                this.flightIDFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int StationID
+        {
+            get
+            {
+                return this.stationIDField;
+            }
+            set
+            {
+                this.stationIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool StationIDSpecified
+        {
+            get
+            {
+                return this.stationIDFieldSpecified;
+            }
+            set
+            {
+                this.stationIDFieldSpecified = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("MSBuild", "15.5.180+ge4c819961e")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/DTOs")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schemas.datacontract.org/2004/07/DTOs", IsNullable=true)]
+    public partial class FlightInfoDTO
+    {
+        
+        private System.DateTime enterTimeField;
+        
+        private bool enterTimeFieldSpecified;
+        
+        private System.DateTime exitTimeField;
+        
+        private bool exitTimeFieldSpecified;
+        
+        private int flightIDField;
+        
+        private bool flightIDFieldSpecified;
+        
+        private int stationIDField;
+        
+        private bool stationIDFieldSpecified;
+        
+        /// <remarks/>
+        public System.DateTime EnterTime
+        {
+            get
+            {
+                return this.enterTimeField;
+            }
+            set
+            {
+                this.enterTimeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool EnterTimeSpecified
+        {
+            get
+            {
+                return this.enterTimeFieldSpecified;
+            }
+            set
+            {
+                this.enterTimeFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        public System.DateTime ExitTime
+        {
+            get
+            {
+                return this.exitTimeField;
+            }
+            set
+            {
+                this.exitTimeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool ExitTimeSpecified
+        {
+            get
+            {
+                return this.exitTimeFieldSpecified;
+            }
+            set
+            {
+                this.exitTimeFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int FlightID
+        {
+            get
+            {
+                return this.flightIDField;
+            }
+            set
+            {
+                this.flightIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool FlightIDSpecified
+        {
+            get
+            {
+                return this.flightIDFieldSpecified;
+            }
+            set
+            {
+                this.flightIDFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int StationID
+        {
+            get
+            {
+                return this.stationIDField;
+            }
+            set
+            {
+                this.stationIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool StationIDSpecified
+        {
+            get
+            {
+                return this.stationIDFieldSpecified;
+            }
+            set
+            {
+                this.stationIDFieldSpecified = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("MSBuild", "15.5.180+ge4c819961e")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/DTOs")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://schemas.datacontract.org/2004/07/DTOs", IsNullable=true)]
     public partial class FlightDTO
     {
         
@@ -178,7 +386,7 @@ namespace AirportLogicService.ContractTypes
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://tempuri.org/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://tempuri.org/", IsNullable=false)]
-    public partial class AddFlightToScedule
+    public partial class AddFlightToSchedule
     {
         
         private FlightDTO flightField;
@@ -205,39 +413,100 @@ namespace AirportLogicService.ContractTypes
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://tempuri.org/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://tempuri.org/", IsNullable=false)]
-    public partial class AddFlightToSceduleResponse
+    public partial class AddFlightToScheduleResponse
     {
         
-        private bool addFlightToSceduleResultField;
-        
-        private bool addFlightToSceduleResultFieldSpecified;
+        private FlightDTO addFlightToScheduleResultField;
         
         /// <remarks/>
-        public bool AddFlightToSceduleResult
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public FlightDTO AddFlightToScheduleResult
         {
             get
             {
-                return this.addFlightToSceduleResultField;
+                return this.addFlightToScheduleResultField;
             }
             set
             {
-                this.addFlightToSceduleResultField = value;
+                this.addFlightToScheduleResultField = value;
             }
         }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("MSBuild", "15.5.180+ge4c819961e")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://tempuri.org/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://tempuri.org/", IsNullable=false)]
+    public partial class AddFlightInfoToHistory
+    {
+        
+        private FlightInfoDTO flightInfoField;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool AddFlightToSceduleResultSpecified
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public FlightInfoDTO flightInfo
         {
             get
             {
-                return this.addFlightToSceduleResultFieldSpecified;
+                return this.flightInfoField;
             }
             set
             {
-                this.addFlightToSceduleResultFieldSpecified = value;
+                this.flightInfoField = value;
             }
         }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("MSBuild", "15.5.180+ge4c819961e")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://tempuri.org/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://tempuri.org/", IsNullable=false)]
+    public partial class AddFlightInfoToHistoryResponse
+    {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("MSBuild", "15.5.180+ge4c819961e")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://tempuri.org/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://tempuri.org/", IsNullable=false)]
+    public partial class UpdateStationState
+    {
+        
+        private StationDTO stationDTOField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public StationDTO stationDTO
+        {
+            get
+            {
+                return this.stationDTOField;
+            }
+            set
+            {
+                this.stationDTOField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("MSBuild", "15.5.180+ge4c819961e")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://tempuri.org/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://tempuri.org/", IsNullable=false)]
+    public partial class UpdateStationStateResponse
+    {
     }
     
     /// <remarks/>
