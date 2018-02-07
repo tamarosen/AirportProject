@@ -18,14 +18,46 @@ namespace AirportGUI
             this.mainViewModel = mainViewModel;
         }
 
-        public void FlightUpdate()
+        //public void FlightAdd(FlightDTO flightDTO)
+        //{
+        //    if (mainViewModel.ListsInitialized)
+        //    {
+        //        mainViewModel.FutureFlights.Add(flightDTO);
+        //        mainViewModel.UpdateFutureFlights();
+        //    }
+        //}
+
+        //public void FlightRemove(FlightDTO flightDTO)
+        //{
+        //    if (mainViewModel.ListsInitialized)
+        //    {
+        //        mainViewModel.FutureFlights.Remove(flightDTO);
+        //        mainViewModel.UpdateFutureFlights();
+        //    }
+        //}
+
+        //public void StationStateUpdate(StationDTO stationDTO)
+        //{
+        //    if (mainViewModel.ListsInitialized)
+        //    {
+        //        mainViewModel.StationsState.Where(s => s.StationID == stationDTO.StationID).FirstOrDefault().FlightID = stationDTO.FlightID;
+        //        mainViewModel.UpdateStationState();
+        //    }
+        //}
+
+        public void FlightAdd(FlightDTO flightDTO)
         {
-            mainViewModel.LoadFutureFlight();
+            mainViewModel.FlightAdd(flightDTO);
         }
 
-        public void StationStateUpdate()
+        public void FlightRemove(FlightDTO flightDTO)
         {
-            mainViewModel.LoadStationsState();
+            mainViewModel.FlightRemove(flightDTO);
+        }
+
+        public void StationStateUpdate(StationDTO stationDTO)
+        {
+            mainViewModel.StationStateUpdate(stationDTO);
         }
     }
 }

@@ -7,16 +7,18 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525"
         DataContext="{Binding Source={StaticResource Locator}, Path=MainVM}">
-   
+
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
 
         <!--<ListBox Grid.Column="0" HorizontalAlignment="Left">
-            --><!--<ListBox.ItemTemplate>-->
-            <!--<DataTemplate>--><!--
+            -->
+        <!--<ListBox.ItemTemplate>-->
+        <!--<DataTemplate>-->
+        <!--
             <StackPanel Orientation="Horizontal">
                 <Border BorderThickness="1" BorderBrush="Black">
                     <TextBlock Foreground="Black" FontWeight="Bold" FontSize="14" Text=" Flight ID " />
@@ -28,54 +30,58 @@
                     <TextBlock Foreground="Black" FontWeight="Bold" FontSize="14" Text=" Time "/>
                 </Border>
             </StackPanel>
-            --><!--</DataTemplate>-->
-            <!--</ListBox.ItemTemplate>--><!--
+            -->
+        <!--</DataTemplate>-->
+        <!--</ListBox.ItemTemplate>-->
+        <!--
         </ListBox>-->
 
-        <DataGrid Grid.Column="0" ItemsSource="{Binding FutureFlights}" AutoGenerateColumns="False">
+        <DataGrid Grid.Column="0" ItemsSource="{Binding FutureFlights, Mode=TwoWay}" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header=" Flight ID " Width="SizeToCells" MinWidth="60" IsReadOnly="True">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding ID}" />
+                            <TextBlock Text="{Binding ID, Mode=TwoWay}" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header=" Take off/Land" Width="SizeToCells" MinWidth="100" IsReadOnly="True">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding State}" />
+                            <TextBlock Text="{Binding State,Mode=TwoWay}" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header=" Time " Width="SizeToCells" MinWidth="50" IsReadOnly="True">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding StartRouteTime}" />
+                            <TextBlock Text="{Binding StartRouteTime,Mode=TwoWay}" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
 
-        <DataGrid Grid.Column="1" ItemsSource="{Binding StationsState}" AutoGenerateColumns="False">
+        <DataGrid Grid.Column="1" ItemsSource="{Binding StationsState,Mode=TwoWay}" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="Station" Width="SizeToCells" MinWidth="50" IsReadOnly="True">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding StationID}" />
+                            <TextBlock Text="{Binding StationID,Mode=TwoWay}" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="Flight" Width="SizeToCells" MinWidth="50" IsReadOnly="True">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding FlightID}" />
+                            <TextBlock Text="{Binding FlightID,Mode=TwoWay}" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
 
+        <!--<Button Content="Add" Command="{Binding AddFlight}" Margin="267,291,0,0"/>-->
+        
     </Grid>
 </Window>

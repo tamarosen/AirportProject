@@ -1,6 +1,6 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import namespace="http://schemas.datacontract.org/2004/07/DTOs" />
+  <xs:import schemaLocation="http://localhost:8733/AirportLogicService/AirportManagerService/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DTOs" />
   <xs:element name="ScheduleNewFlight">
     <xs:complexType>
       <xs:sequence>
@@ -39,14 +39,25 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="FlightUpdate">
+  <xs:element name="FlightRemove">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/DTOs" minOccurs="0" name="flightDTO" nillable="true" type="q4:FlightDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FlightAdd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/DTOs" minOccurs="0" name="flightDTO" nillable="true" type="q5:FlightDTO" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="StationStateUpdate">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/DTOs" minOccurs="0" name="stationDTO" nillable="true" type="q6:StationDTO" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
 </xs:schema>

@@ -11,22 +11,35 @@ using Models;
 namespace AirportLogicService
 {
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerSession)]
-    public class AirportManagerService : IAirportManager
+    public class AirportManagerService : IAirportManager, IDisposable
     {
         private Random rnd;
         private Airport airport;
         private Timer scheduleTimer;
         private SortedSet<DTOs.FlightDTO> flights;
         private RepositoryClient repo;
+        private IAirportDuplexCallback sessionCallback;
 
         public AirportManagerService()
         {
             rnd = new Random();
             repo = new RepositoryClient();
             airport = Airport.Instance();
+            InitCallback();
             LoadFutureFlights();
             TimeSpan firstFlight = GetNextTimeSpan();
-            scheduleTimer = new Timer(HandleFlightScedule, null, new TimeSpan(0), firstFlight);
+            scheduleTimer = new Timer(HandleFlightScedule, null, firstFlight, firstFlight);
+        }
+
+        private void InitCallback()
+        {
+            sessionCallback = null;
+            OperationContext opCtx = OperationContext.Current;
+            if (opCtx != null)
+            {
+                sessionCallback = opCtx.GetCallbackChannel<IAirportDuplexCallback>();
+                CallbacksHolder.Instance().Add(sessionCallback);
+            }
         }
 
         private void LoadFutureFlights()
@@ -53,7 +66,11 @@ namespace AirportLogicService
                 }
             }
             TimeSpan timeUntilNextFlight = GetNextTimeSpan();
-            scheduleTimer.Change(new TimeSpan(0), timeUntilNextFlight);
+            if (timeUntilNextFlight < new TimeSpan(0))
+            {
+                timeUntilNextFlight = new TimeSpan(0, 0, 0, 0, 1);
+            }
+            scheduleTimer.Change(timeUntilNextFlight, timeUntilNextFlight);
         }
 
         private Flight GetFlight()
@@ -68,16 +85,13 @@ namespace AirportLogicService
                 StartRouteTime = flightDTO.StartRouteTime
             };
             flights.Remove(flightDTO);
-            if (Callback != null)
-            {
-                Callback.FlightUpdate();
-            }
+            CallbacksHolder.Instance().FlightRemove(flightDTO);
             return flight;
         }
 
         private TimeSpan GetNextTimeSpan()
         {
-            if(flights.Count == 0)
+            if (flights.Count == 0)
             {
                 return new TimeSpan(0, 0, 0, 0, -1);
             }
@@ -108,7 +122,8 @@ namespace AirportLogicService
                 flight.CurrentStation = nextStation;
                 if (nextStation != null)
                 {
-                    new Timer(MoveToNextStation, flight, rnd.Next(1000, 5000), 0);
+                    CallbacksHolder.Instance().StationStateUpdate(nextStation);
+                    new Timer(MoveToNextStation, flight, rnd.Next(10000, 60000), 0);
                 }
                 else
                 {
@@ -124,16 +139,15 @@ namespace AirportLogicService
             {
                 return;
             }
+            // pops the flight currently in the station and get the next one
             Flight flight = station.DequeueFlight();
-            if (Callback != null)
-            {
-                Callback.StationStateUpdate();
-            }
+            CallbacksHolder.Instance().StationStateUpdate(station);
+            // if there's a next flight
             if (flight != null)
             {
                 Station prevStation = flight.CurrentStation;
                 flight.CurrentStation = station;
-                new Timer(MoveToNextStation, flight, rnd.Next(1000, 5000), 0);
+                new Timer(MoveToNextStation, flight, rnd.Next(10000, 60000), 0);
                 HandlePrevStation(prevStation);
             }
         }
@@ -163,12 +177,9 @@ namespace AirportLogicService
             // if this is the only flight in station
             if (st.EnqueueFlight(flight))
             {
-                if (Callback != null)
-                {
-                    Callback.StationStateUpdate();
-                }
+                CallbacksHolder.Instance().StationStateUpdate(st);
                 flight.CurrentStation = st;
-                Timer timer = new Timer(MoveToNextStation, flight, rnd.Next(1000, 5000), 0);
+                Timer timer = new Timer(MoveToNextStation, flight, rnd.Next(10000, 60000), 0);
             }
         }
 
@@ -179,39 +190,34 @@ namespace AirportLogicService
             // if this is the only flight in station
             if (st.EnqueueFlight(flight))
             {
-                if (Callback != null)
-                {
-                    Callback.StationStateUpdate();
-                }
+                CallbacksHolder.Instance().StationStateUpdate(st);
                 flight.CurrentStation = st;
-                Timer timer = new Timer(MoveToNextStation, flight, rnd.Next(1000, 5000), 0);
+                Timer timer = new Timer(MoveToNextStation, flight, rnd.Next(10000, 60000), 0);
             }
         }
-        
+
         public bool ScheduleNewFlight(DTOs.FlightDTO flightDTO)
         {
             //add new flight to the db schedule table and get it back with unique id
             DTOs.FlightDTO newFlight = repo.AddFlightToSchedule(flightDTO);
+            DTOs.FlightDTO firstFlight = flights.Count == 0 ? null : flights.First();
 
             if (newFlight == null) return false;
 
             if (!flights.Add(newFlight)) return false;
 
-            if (Callback != null)
-            {
-                Callback.FlightUpdate();
-            }
-            if (flights.Count == 0 || newFlight.StartRouteTime < flights.First().StartRouteTime)
+            CallbacksHolder.Instance().FlightAdd(newFlight);
+            if (firstFlight == null || newFlight.StartRouteTime < firstFlight.StartRouteTime)
             {
                 TimeSpan timeUntilNextFlight = GetNextTimeSpan();
-                scheduleTimer.Change(new TimeSpan(0), timeUntilNextFlight);
+                scheduleTimer.Change(timeUntilNextFlight, timeUntilNextFlight);
             }
             return true;
         }
 
         public IEnumerable<DTOs.FlightDTO> GetFutureFlights()
         {
-            return flights;
+            return new List<DTOs.FlightDTO>(flights);
         }
 
         public IEnumerable<DTOs.StationDTO> GetStationsState()
@@ -228,13 +234,12 @@ namespace AirportLogicService
             }
             return stations;
         }
-        private IAirportDuplexCallback Callback
+
+        public void Dispose()
         {
-            get
+            if (sessionCallback != null)
             {
-                OperationContext opCtx = OperationContext.Current;
-                if (opCtx == null) return null;
-                return opCtx.GetCallbackChannel<IAirportDuplexCallback>();
+                CallbacksHolder.Instance().Remove(sessionCallback);
             }
         }
     }

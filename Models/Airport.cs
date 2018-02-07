@@ -53,15 +53,17 @@ namespace Models
             station4.NextLandingStations = new List<Station>() { station5 };
             station5.NextLandingStations = new List<Station>() { station6, station7 };
 
-            AllStations = new Dictionary<int, Station>();
-            AllStations.Add(station1.ID, station1);
-            AllStations.Add(station2.ID, station2);
-            AllStations.Add(station3.ID, station3);
-            AllStations.Add(station4.ID, station4);
-            AllStations.Add(station5.ID, station5);
-            AllStations.Add(station6.ID, station6);
-            AllStations.Add(station7.ID, station7);
-            AllStations.Add(station8.ID, station8);
+            AllStations = new Dictionary<int, Station>
+            {
+                { station1.ID, station1 },
+                { station2.ID, station2 },
+                { station3.ID, station3 },
+                { station4.ID, station4 },
+                { station5.ID, station5 },
+                { station6.ID, station6 },
+                { station7.ID, station7 },
+                { station8.ID, station8 }
+            };
 
             FirstLandingStations = new List<Station>() { station1 };
             FirstFlyingStations = new List<Station>() { station6, station7 };

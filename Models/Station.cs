@@ -36,7 +36,7 @@ namespace Models
             }
         }
 
-        // returns the next flight is in the station (first in the queue)
+        // returns the next flight in the station (first in the queue)
         public Flight DequeueFlight()
         {
             lock (FlightsQueue)

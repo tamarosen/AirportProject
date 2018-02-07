@@ -37,11 +37,14 @@ namespace AirportGUI.LogicServiceReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface IAirportManagerCallback {
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAirportManager/FlightUpdate")]
-        void FlightUpdate();
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAirportManager/FlightRemove")]
+        void FlightRemove(DTOs.FlightDTO flightDTO);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAirportManager/FlightAdd")]
+        void FlightAdd(DTOs.FlightDTO flightDTO);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAirportManager/StationStateUpdate")]
-        void StationStateUpdate();
+        void StationStateUpdate(DTOs.StationDTO stationDTO);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]

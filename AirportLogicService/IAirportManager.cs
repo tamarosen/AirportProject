@@ -24,8 +24,10 @@ namespace AirportLogicService
     public interface IAirportDuplexCallback
     {
         [OperationContract(IsOneWay = true)]
-        void FlightUpdate();
+        void FlightRemove(DTOs.FlightDTO flightDTO);
         [OperationContract(IsOneWay = true)]
-        void StationStateUpdate();
+        void FlightAdd(DTOs.FlightDTO flightDTO);
+        [OperationContract(IsOneWay = true)]
+        void StationStateUpdate(DTOs.StationDTO stationDTO);
     }
 }
